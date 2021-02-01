@@ -1,0 +1,3 @@
+graft townsquare/static
+graft townsquare/templates
+global-exclude *.pyc

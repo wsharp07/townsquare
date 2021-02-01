@@ -1,0 +1,23 @@
+[
+    {
+        "fullName": "William Sharp",
+        "username": "wsharp07",
+        "team": "Ace of Spades",
+        "department": "Marketing",
+        "startDate": "2015-04-01"
+    },
+    {
+        "fullName": "Grey Li",
+        "username": "greyli",
+        "team": "Ace of Spades",
+        "department": "Engineering",
+        "startDate": "2016-01-01"
+    },
+    {
+        "fullName": "John Doe",
+        "username": "jdoe2021",
+        "team": "Ace of Spades",
+        "department": "Engineering",
+        "startDate": "2021-01-29"
+    }
+]
