@@ -9,11 +9,11 @@ on:
   pull_request:
     branches: [ main ]
 
-environment: test
 env:
   townsquare_github_token: ${{ secrets.townsquare_github_token }}
 
 jobs:
+  environment: test
   build:
 
     runs-on: ubuntu-latest
