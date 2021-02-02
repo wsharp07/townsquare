@@ -57,5 +57,5 @@ Run with coverage report::
 
 ### Docker
 
-$ docker build -t townsquare:v1 .
-$ docker run -it -e townsquare_github_token='personal access token' -p 8000:8000 townsquare:v1
+    $ docker build -t townsquare:v1 .
+    $ docker run -it -e townsquare_github_token='personal access token' -p 8000:8000 townsquare:v1
