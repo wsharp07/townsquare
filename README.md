@@ -54,3 +54,8 @@ Run with coverage report::
     $ coverage run -m pytest
     $ coverage report
     $ coverage html  # open htmlcov/index.html in a browser
+
+### Docker
+
+$ docker build -t townsquare:v1 .
+$ docker run -it -e townsquare_github_token='personal access token' -p 8000:8000 townsquare:v1
