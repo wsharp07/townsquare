@@ -2,16 +2,16 @@ from flask import Flask, render_template
 from townsquare.services.scoreboard import Scoreboard
 
 def create_app():
-    app = Flask(__name__)
+    application = Flask(__name__)
 
-    @app.route('/')
+    @application.route('/')
     def index():
         model = Scoreboard().generate()
         return render_template('index.html', model=model)
 
-    return app
+    return application
 
 if __name__ == "__main__":
-    app = create_app()
-    app.run()
+    application = create_app()
+    application.run()
 
