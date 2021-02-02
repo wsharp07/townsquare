@@ -13,11 +13,10 @@ env:
   townsquare_github_token: ${{ secrets.townsquare_github_token }}
 
 jobs:
-  environment: test
   build:
 
     runs-on: ubuntu-latest
-
+    environment: test
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
