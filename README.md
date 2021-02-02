@@ -22,9 +22,18 @@ installing Townsquare:
     $ pip install -e ../..
     $ pip install -e .
 
+Install dependencies:
+
+    $ pip install -r requirements.txt
+
+### Configure Environment
+Set an environment variable with your GitHub Personal Access token
+
+    townsquare_github_token="personal access token"
+
 ### Run
 
-    $ export FLASK_APP=townsquare
+    $ export FLASK_APP=townsquare/app.py
     $ export FLASK_ENV=development
     $ flask run
 
