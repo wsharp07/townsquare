@@ -20,7 +20,7 @@ class Scoreboard:
 
     def query_first_pr(self, user):
         repo = PullRequestRepo()
-        return repo.first_pr(user.username)
+        return repo.first_pr(user.username, user.start_date)
 
     def create_model(self, user, first_pr):
         if (first_pr is None):
