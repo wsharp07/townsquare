@@ -9,9 +9,12 @@ class PullRequestRepo:
     headers = {'Authorization': f'bearer {token}'}
 
     def first_pr(self, username, start_date):
-        response = self.__deep_query(username, 3, None, start_date)
+        response = self.__deep_query(username, 50, None, start_date)
 
-        if (response['user'] is None):
+        if (response['user'] == None):
+            return None
+
+        if (response['pull_request'] == None):
             return None
 
         pr = self.__parse_pull_request(response['pull_request'], username)
@@ -64,6 +67,12 @@ class PullRequestRepo:
             }
 
         edges = response['data']['user']['pullRequests']['edges']
+
+        if (len(edges) == 0):
+            return {
+                'user': user,
+                'pull_request': None
+            }
 
         for node in edges:
             date_format = '%Y-%m-%dT%H:%M:%SZ'
