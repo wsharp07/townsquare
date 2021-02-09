@@ -24,9 +24,9 @@ class Scoreboard:
 
     def create_model(self, user, first_pr):
         if (first_pr is None):
-            return FirstPullRequest(user.full_name, None, '#', user.start_date, None)
+            return FirstPullRequest(user, None, '#', user.start_date, None)
         else:
-            return FirstPullRequest(user.full_name, first_pr.title, first_pr.url, user.start_date, first_pr.pr_date)
+            return FirstPullRequest(user, first_pr.title, first_pr.url, user.start_date, first_pr.pr_date)
 
     def generate(self):
         data = self.parse_file()
@@ -38,4 +38,6 @@ class Scoreboard:
             first_pr_model = self.create_model(user, first_pr)
             model.append(first_pr_model)
 
-        return model
+
+        sorted_model = sorted(model, key=lambda x: (x.has_pr, x.days))
+        return sorted_model

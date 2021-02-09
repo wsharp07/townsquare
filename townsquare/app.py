@@ -9,6 +9,11 @@ def create_app():
         model = Scoreboard().generate()
         return render_template('index.html', model=model)
 
+    @application.route('/leaderboard')
+    def leaderboard():
+        model = Scoreboard().generate()
+        return render_template('leaderboard.html', model=model)
+
     return application
 
 if __name__ == "__main__":
