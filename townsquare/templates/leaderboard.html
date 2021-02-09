@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Dept</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Pull Request Date</th>
+                    <th scope="col">Pull Request</th>
+                    <th scope="col">Days</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in model %}
+                    <tr>
+                        <th scope="row">{{ loop.index }}</th>
+                        <td>{{ i.user.full_name }}</td>
+                        <td>{{ i.user.department }}</td>
+                        <td>{{ i.start_date.strftime("%B %d, %Y") }}</td>
+                        {%if i.has_pr == False %}
+                            <td></td>
+                            <td></td>
+                            <td><span class="badge badge-danger badge-pill">{{ i.days }}</span></td>
+                        {% else %}
+                            <td>{{ i.pr_date.strftime("%B %d, %Y") }}</td>
+                            <td>
+                                <a href="{{ i.url }}" target="_blank">
+                                    {{ i.title }}
+                                </a>
+                            </td>
+                            <td><span class="badge badge-primary badge-pill">{{ i.days }}</span></td>
+                        {% endif %}
+                    </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
